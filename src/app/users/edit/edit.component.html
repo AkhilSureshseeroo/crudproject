@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Update Employee Records</h1>
+
+    <a href="#" routerLink="/users/index" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="empName">Employee Name</label>
+            <input
+                formControlName="empName"
+                id="empName"
+                type="text"
+                [(ngModel)]="users.empName"
+                class="form-control">
+            <div *ngIf="f['empName'].touched && f['empName'].invalid" class="alert alert-danger">
+                <div *ngIf="f['empName'].errors && f['empName'].errors['required']">Employee Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="empEmail">Employee Email</label>
+              <input
+                formControlName="empEmail"
+                id="empEmail"
+                type="text"
+                [(ngModel)]="users.empEmail"
+                class="form-control">
+
+            <div *ngIf="f['empEmail'].touched && f['empEmail'].invalid" class="alert alert-danger">
+                <div *ngIf="f['empEmail'].errors && f['empEmail'].errors['required']">Employee Email is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="empMobile">Employee Email</label>
+            <input
+              formControlName="empMobile"
+              id="empMobile"
+              type="text"
+              [(ngModel)]="users.empMobile"
+              class="form-control">
+
+          <div *ngIf="f['empMobile'].touched && f['empMobile'].invalid" class="alert alert-danger">
+              <div *ngIf="f['empMobile'].errors && f['empMobile'].errors['required']">Employee Mobile is required.</div>
+          </div>
+      </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update Employee Records</button>
+    </form>
