@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Employee Records</h1>
 
-    <a href="#" routerLink="/users/create/" class="btn btn-success">Create New Employee Profile</a>
+    <a href="#" routerLink="/users/createuser/" class="btn btn-success">Create New Employee Profile</a>
 
     <table class="table table-bordered">
       <tr>
@@ -13,14 +13,14 @@
         <th width="220px">Action</th>
       </tr>
       <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
+        <td>{{ user._id }}</td>
         <td>{{ user.empName }}</td>
         <td>{{ user.empEmail }}</td>
         <td>{{user.empMobile}}</td>
         <td>
-          <a href="#" [routerLink]="['/users/', user.id, 'view']" class="btn btn-info">View</a>
-          <a href="#" [routerLink]="['/users/', user.id, 'edit']" class="btn btn-primary">Edit</a>
-          <button type="button" (click)="deleteUsers(user.id)" class="btn btn-danger">Delete</button>
+          <a href="#" [routerLink]="['/users/', user._id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/users/', user._id, 'edit']" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deleteUsers(user._id)" class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </table>

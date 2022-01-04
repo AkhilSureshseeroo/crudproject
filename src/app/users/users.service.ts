@@ -10,7 +10,7 @@ import { Users } from './users';
 })
 export class UsersService {
 
-  private apiURL="http://localhost:3000";
+  private apiURL="http://localhost:3000/users";
 
   httpOptions = {headers: new HttpHeaders({'Content-Type':'application/json'})}
 
@@ -22,25 +22,25 @@ export class UsersService {
     )
   }
   create(user:any): Observable<Users>{
-    return this.httpClient.post<Users>(this.apiURL +'/users/',JSON.stringify(user),this.httpOptions)
+    return this.httpClient.post<Users>(this.apiURL +'/createuser/',JSON.stringify(user),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
-  find(id:number):Observable<Users>{
-    return this.httpClient.get<Users>(this.apiURL + '/users/'+id)
+  find(id:any):Observable<Users>{
+    return this.httpClient.get<Users>(this.apiURL + id)
     .pipe(
       catchError(this.errorHandler)
     )
   }
   update(id:any,user:any):Observable<Users>{
-    return this.httpClient.patch<Users>(this.apiURL+ '/users/'+id,JSON.stringify(user),this.httpOptions)
+    return this.httpClient.patch<Users>(this.apiURL+ '/update/'+ id,JSON.stringify(user),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
   delete(id:any):Observable<Users>{
-    return this.httpClient.delete<Users>(this.apiURL+ '/users/'+id,this.httpOptions)
+    return this.httpClient.delete<Users>(this.apiURL + '/delete/'+ id,this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
