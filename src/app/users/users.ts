@@ -1,5 +1,5 @@
 export interface Users {
-  _id:number,
+  _id:any,
   empName:string,
   empEmail:string,
   empMobile:string
