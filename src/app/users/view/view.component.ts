@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersModule } from '../users.module';
+
 import { ActivatedRoute,Router } from '@angular/router';
 import { Users } from '../users';
 import { UsersService } from '../users.service';
@@ -19,7 +19,7 @@ export class ViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id=this.route.snapshot.params[this.id];
+    this.id=this.route.snapshot.params[':userid'];
 
     this.usersService.find(this.id).subscribe((data:Users)=>{
       this.users=data;

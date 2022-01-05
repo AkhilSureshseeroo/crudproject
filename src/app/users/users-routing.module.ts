@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'users',redirectTo:'users/index',pathMatch:'full'},
   {path:'users/index',component:IndexComponent},
   {path:'users/:userid/view',component:ViewComponent},
-  {path:'users/create',component:CreateComponent},
+  {path:'users/createuser',component:CreateComponent},
   {path:'users/:userid/edit',component:EditComponent}
 ];
 

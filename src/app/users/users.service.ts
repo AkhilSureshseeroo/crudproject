@@ -10,7 +10,7 @@ import { Users } from './users';
 })
 export class UsersService {
 
-  private apiURL="http://localhost:3000/users";
+  private apiURL="http://localhost:3000/users/";
 
   httpOptions = {headers: new HttpHeaders({'Content-Type':'application/json'})}
 
@@ -27,8 +27,8 @@ export class UsersService {
       catchError(this.errorHandler)
     )
   }
-  find(id:any):Observable<Users>{
-    return this.httpClient.get<Users>(this.apiURL + id)
+  find(id:number):Observable<Users>{
+    return this.httpClient.get<Users>(this.apiURL  +`${id}`,this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

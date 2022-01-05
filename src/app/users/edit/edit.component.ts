@@ -22,7 +22,7 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id=this.snapshot.params['usersId'];
+    this.id=this.snapshot.params.id;
     this.usersService.find(this.id).subscribe((data:Users)=>{
       this.users=data
     });
