@@ -28,7 +28,7 @@ export class UsersService {
     )
   }
   find(id:number):Observable<Users>{
-    return this.httpClient.get<Users>(this.apiURL  +`${id}`,this.httpOptions)
+    return this.httpClient.get<Users>(this.apiURL  + id,this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

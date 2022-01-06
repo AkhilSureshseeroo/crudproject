@@ -19,7 +19,7 @@ export class ViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id=this.route.snapshot.params[':userid'];
+    this.id=this.route.snapshot.params['userId'];
 
     this.usersService.find(this.id).subscribe((data:Users)=>{
       this.users=data;

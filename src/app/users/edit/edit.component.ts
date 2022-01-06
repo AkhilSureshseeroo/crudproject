@@ -22,12 +22,12 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id=this.snapshot.params.id;
+    this.id=this.route.snapshot.params['userId'];
     this.usersService.find(this.id).subscribe((data:Users)=>{
       this.users=data
     });
     this.form=new FormGroup({
-      empName:new FormControl('',[Validators.required]),
+      empName:new FormControl('',Validators.required),
       empEmail:new FormControl('',Validators.required),
       empMobile:new FormControl('',Validators.required)
     })

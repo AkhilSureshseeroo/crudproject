@@ -8,9 +8,9 @@ import { ViewComponent } from './view/view.component';
 const routes: Routes = [
   {path:'users',redirectTo:'users/index',pathMatch:'full'},
   {path:'users/index',component:IndexComponent},
-  {path:'users/:userid/view',component:ViewComponent},
+  {path:'users/:userId/view',component:ViewComponent},
   {path:'users/createuser',component:CreateComponent},
-  {path:'users/:userid/edit',component:EditComponent}
+  {path:'users/:userId/edit',component:EditComponent}
 ];
 
 @NgModule({
