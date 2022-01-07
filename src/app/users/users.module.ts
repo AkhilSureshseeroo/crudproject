@@ -7,8 +7,6 @@ import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
 @NgModule({
   declarations: [
     IndexComponent,

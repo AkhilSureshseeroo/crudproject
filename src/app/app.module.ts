@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 
 import { UsersModule } from './users/users.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -16,6 +16,7 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule,
     UsersModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
