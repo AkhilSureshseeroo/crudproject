@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { IndexComponent } from './index/index.component';
@@ -18,7 +20,9 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UsersRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class UsersModule { }
