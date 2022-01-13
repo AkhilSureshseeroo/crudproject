@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { IndexComponent } from './index/index.component';
@@ -24,7 +25,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ]
 })
 export class UsersModule { }

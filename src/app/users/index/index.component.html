@@ -1,29 +1,21 @@
-<mat-card>
-<div class="container">
-  <div class="container">
-    <mat-card-title>Employee Records</mat-card-title>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let user"> {{user._id}} </td>
+    </ng-container>
 
-    <a mat-raised-button color="accent" href="#" routerLink="/users/createuser/" class="btn btn-success">Create New Employee Profile</a>
+    <ng-container matColumnDef="student_name">
+      <th mat-header-cell *matHeaderCellDef> Student Name </th>
+      <td mat-cell *matCellDef="let user"> {{user.empName}} </td>
+    </ng-container>
 
-    <table class="table table-bordered">
-      <tr>
-        <th>Employee ID</th>
-        <th>Employee Name</th>
-        <th>Employee Email</th>
-        <th>Employee Mobile</th>
-        <th width="220px">Action</th>
-      </tr>
+    <ng-container matColumnDef="student_email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user"> {{user.empEmail}} </td>
+    </ng-container>
 
-      <tr *ngFor="let user of users">
-        <td>{{user._id}}</td>
-        <td>{{ user.empName }}</td>
-        <td>{{ user.empEmail }}</td>
-        <td>{{user.empMobile}}</td>
-        <td>
-          <a mat-raised-button color="primary" href="#" [routerLink]="['/users/', user._id, 'view']" class="btn btn-info">View</a>
-          <a mat-raised-button color="primary" href="#" [routerLink]="['/users/', user._id, 'edit']" class="btn btn-primary">Edit</a>
-          <button mat-raised-button color="warn" (click)="deleteUsers(user._id)" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-    </table>
- </div>
+    <ng-container matColumnDef="section">
+      <th mat-header-cell *matHeaderCellDef> Section </th>
+      <td mat-cell *matCellDef="let user"> {{user.empMobile}} </td>
+    </ng-container>

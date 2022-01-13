@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 import { Users } from '../users';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-index',
@@ -9,6 +10,8 @@ import { Users } from '../users';
 })
 export class IndexComponent implements OnInit {
   users:Users[]=[];
+  dataSource:MatTableDataSource<Users> | undefined
+
 
 
   constructor(public usersService:UsersService) { }
